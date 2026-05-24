@@ -48,7 +48,7 @@ public class UserServiceTest {
 
     @Test
     @DisplayName("이메일 중복 시 예외 발생")
-    void createUser_duplicateEmail_thorwsException() {
+    void createUser_duplicateEmail_throwsException() {
         // given
         UserCreateRequest request = new UserCreateRequest("홍길동", "hong@email.com", Role.STUDENT);
         given(userRepository.existsByEmail(request.email())).willReturn(true);
