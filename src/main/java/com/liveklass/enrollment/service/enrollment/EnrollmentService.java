@@ -33,10 +33,10 @@ public class EnrollmentService {
     public void createEnrollment(Long userId, EnrollmentCreateRequest request) {
         User user = userRepository.findByIdOrThrow(userId, ErrorCode.NOT_FOUND_USER);
 
+        Preconditions.validate(user.getRole() == Role.STUDENT, ErrorCode.NOT_STUDENT);
+
         Lecture lecture = lectureRepository.findByIdWithLock(request.lectureId())
                         .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_LECTURE));
-
-        Preconditions.validate(user.getRole() == Role.STUDENT, ErrorCode.NOT_STUDENT);
 
         // 강의 상태 검증
         Preconditions.validate(lecture.getLectureStatus() == LectureStatus.OPEN,

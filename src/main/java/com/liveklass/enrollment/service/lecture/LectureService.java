@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -95,27 +94,10 @@ public class LectureService {
 
         List<Enrollment> enrollments = enrollmentRepository.findAllBylecture(lecture);
 
-        List<EnrollmentsByLectureResponse.EnrollmentInfo> enrollmentInfos = enrollments.stream()
-                .map(enrollment -> new EnrollmentsByLectureResponse.EnrollmentInfo(
-                        enrollment.getId(),
-                        enrollment.getUser().getId(),
-                        enrollment.getUser().getName(),
-                        enrollment.getUser().getEmail(),
-                        enrollment.getEnrollmentStatus(),
-                        enrollment.getConfirmedAt(),
-                        enrollment.getCreatedAt()
-                ))
-                .collect(Collectors.toList());
-
-        return new EnrollmentsByLectureResponse(
-                lecture.getId(),
-                lecture.getTitle(),
-                lecture.getCapacity(),
-                lecture.getCurrentEnrollment(),
-                enrollmentInfos
-        );
+       return EnrollmentsByLectureResponse.from(lecture, enrollments);
     }
 
+    @Transactional(readOnly = true)
     public LectureListResponse getLectureListByStatus(LectureStatus status) {
         List<Lecture> lectures = status == null
                 ? lectureRepository.findAll() // 전체 조회
@@ -124,6 +106,7 @@ public class LectureService {
         return LectureListResponse.from(lectures);
     }
 
+    @Transactional(readOnly = true)
     public LectureDetailResponse getLectureDetail(Long lectureId) {
         Lecture lecture = lectureRepository.findByIdOrThrow(lectureId, ErrorCode.NOT_FOUND_LECTURE);
 
