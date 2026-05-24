@@ -58,9 +58,11 @@ docker-compose up -d
 - 공통 코드(예외 처리, 공통 응답 형식 등)는 부트캠프 강의에서 제공받은 코드를 기반으로 활용했습니다.
 ## API 목록 및 예시
 <img width="965" height="649" alt="API 명세서" src="https://github.com/user-attachments/assets/8cff08ae-9f42-4724-88fc-6dbc85924a83" />
+
+
 ### 강의 목록 조회 API 명세서 예시 (Request, Response)
+<img width="786" height="206" alt="API 명세서 Request DTO" src="https://github.com/user-attachments/assets/5e984f0e-c14a-4243-95f1-8c7425f1f338" />
 <img width="765" height="718" alt="API 명세서 Response DTO" src="https://github.com/user-attachments/assets/9ca23460-11fa-496c-885e-2562767d19c2" />
-<img width="786" height="206" alt="API 명세서 Request DTO" src="https://github.com/user-attachments/assets/5e984f0e-c14a-4243-95f1-8c7425f1f338" />
 
 
 ## 데이터 모델 설명
