@@ -1,11 +1,10 @@
-package com.liveklass.enrollment.service;
+package com.liveklass.enrollment.service.user;
 
 import com.liveklass.enrollment.domain.user.Role;
 import com.liveklass.enrollment.domain.user.User;
 import com.liveklass.enrollment.dto.request.UserCreateRequest;
 import com.liveklass.enrollment.global.exception.CustomException;
 import com.liveklass.enrollment.repository.user.UserRepository;
-import com.liveklass.enrollment.service.user.UserService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

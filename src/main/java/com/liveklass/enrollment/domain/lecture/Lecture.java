@@ -89,6 +89,10 @@ public class Lecture {
         this.currentEnrollment++;
     }
 
+    public void changeStatus(LectureStatus lectureStatus) {
+        this.lectureStatus = lectureStatus;
+    }
+
 
 
 }
