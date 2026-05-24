@@ -22,6 +22,13 @@
 - Docker / Docker Compose
 - Gradle
 ## 실행 방법
+```bash
+# 1. MySQL 컨테이너 실행
+docker-compose up -d
+
+# 2. 애플리케이션 실행
+./gradlew bootRun
+```
 ## 요구사항 해석 및 가정
 ## 설계 결정과 이유
 ## 미구현 / 제약사항
