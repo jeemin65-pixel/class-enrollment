@@ -8,6 +8,7 @@ import com.liveklass.enrollment.domain.user.Role;
 import com.liveklass.enrollment.domain.user.User;
 import com.liveklass.enrollment.dto.request.EnrollmentCreateRequest;
 import com.liveklass.enrollment.dto.response.UserEnrollmentList;
+import com.liveklass.enrollment.global.exception.CustomException;
 import com.liveklass.enrollment.global.exception.ErrorCode;
 import com.liveklass.enrollment.global.support.Preconditions;
 import com.liveklass.enrollment.repository.enrollment.EnrollmentRepository;
@@ -31,7 +32,9 @@ public class EnrollmentService {
 
     public void createEnrollment(Long userId, EnrollmentCreateRequest request) {
         User user = userRepository.findByIdOrThrow(userId, ErrorCode.NOT_FOUND_USER);
-        Lecture lecture = lectureRepository.findByIdOrThrow(request.lectureId(), ErrorCode.NOT_FOUND_LECTURE);
+
+        Lecture lecture = lectureRepository.findByIdWithLock(request.lectureId())
+                        .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_LECTURE));
 
         Preconditions.validate(user.getRole() == Role.STUDENT, ErrorCode.NOT_STUDENT);
 
@@ -47,6 +50,8 @@ public class EnrollmentService {
                 .lecture(lecture)
                 .user(user)
                 .build();
+
+        lecture.increaseEnrollment();
 
         enrollmentRepository.save(enrollment);
     }

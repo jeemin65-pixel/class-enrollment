@@ -85,6 +85,10 @@ public class Lecture {
         this.updatedAt = LocalDateTime.now();
     }
 
+    public void increaseEnrollment() {
+        this.currentEnrollment++;
+    }
+
 
 
 }
