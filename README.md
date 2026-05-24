@@ -74,6 +74,9 @@ docker-compose up -d
 - **Enrollment**: 수강 신청 정보 및 상태(PENDING/CONFIRMED/CANCELLED) 관리, User와 Lecture 참조
 ## 테스트 실행 방법
 ```bash
-# Docker Compose로 MySQL 먼저 실행 후
+# 1. Docker Compose로 MySQL 먼저 실행
+docker-compose up -d
+
+# 2. 테스트 실행
 ./gradlew test
 ```
