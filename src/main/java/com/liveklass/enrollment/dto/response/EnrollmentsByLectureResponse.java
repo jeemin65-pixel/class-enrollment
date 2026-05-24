@@ -13,7 +13,7 @@ public record EnrollmentsByLectureResponse(
         List<EnrollmentInfo> enrollments
 ) {
     public record EnrollmentInfo(
-            Long enrollmendId,
+            Long enrollmentId,
             Long userId,
             String name,
             String email,

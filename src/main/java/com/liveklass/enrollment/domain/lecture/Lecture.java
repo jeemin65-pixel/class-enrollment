@@ -60,17 +60,31 @@ public class Lecture {
 
     @Builder
     private Lecture(String title, String description, int capacity, int price, LocalDate startDate,
-                    LocalDate endDate, LectureStatus lectureStatus, User creator) {
+                    LocalDate endDate, User creator) {
         this.title = title;
         this.description = description;
         this.capacity = capacity;
         this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.lectureStatus = lectureStatus;
+        this.lectureStatus = LectureStatus.DRAFT;
         this.creator = creator;
         this.currentEnrollment = 0;
         this.createdAt = LocalDateTime.now();
     }
+
+    public void update(String title, String description, Integer price, Integer capacity,
+                                  LocalDate startDate, LocalDate endDate, LectureStatus lectureStatus) {
+        if (title != null) this.title = title;
+        if (description != null) this.description = description;
+        if (price != null) this.price = price;
+        if (capacity != null) this.capacity = capacity;
+        if (startDate != null) this.startDate = startDate;
+        if (endDate != null) this.endDate = endDate;
+        if (lectureStatus != null) this.lectureStatus = lectureStatus;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+
 
 }
