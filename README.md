@@ -75,7 +75,7 @@ docker-compose up -d
 ---
 ## 데이터 모델 설명
 <img width="1016" height="547" alt="ERD" src="https://github.com/user-attachments/assets/01293f1c-686a-4384-b115-447ec0c72c2a" />
----
+
 ### 테이블 설명
 - **User**: 크리에이터(CREATOR) / 수강생(STUDENT) 역할 구분
 - **Lecture**: 강의 정보 및 상태(DRAFT/OPEN/CLOSED) 관리, 크리에이터 참조
