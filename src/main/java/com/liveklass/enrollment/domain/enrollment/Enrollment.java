@@ -45,4 +45,13 @@ public class Enrollment {
         this.createdAt = LocalDateTime.now();
     }
 
+    public void cancel() {
+        this.enrollmentStatus = EnrollmentStatus.CANCELLED;
+    }
+
+    public void confirm() {
+        this.enrollmentStatus = EnrollmentStatus.CONFIRMED;
+        this.confirmedAt = LocalDateTime.now();
+    }
+
 }
