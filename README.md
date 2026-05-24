@@ -58,13 +58,17 @@ docker-compose up -d
 - 공통 코드(예외 처리, 공통 응답 형식 등)는 부트캠프 강의에서 제공받은 코드를 기반으로 활용했습니다.
 ## API 목록 및 예시
 <img width="965" height="649" alt="API 명세서" src="https://github.com/user-attachments/assets/8cff08ae-9f42-4724-88fc-6dbc85924a83" />
+### 강의 목록 조회 예시
+<img width="786" height="206" alt="API 명세서 Request DTO" src="https://github.com/user-attachments/assets/67f4b7d7-c374-43c0-872e-b0f93f91e232" />
+<img width="765" height="718" alt="API 명세서 Response DTO" src="https://github.com/user-attachments/assets/c0ac2b92-8897-4232-9690-59bc9a8e62c0" />
 
 ## 데이터 모델 설명
+<img width="1016" height="547" alt="ERD" src="https://github.com/user-attachments/assets/01293f1c-686a-4384-b115-447ec0c72c2a" />
+
 ## 테이블 설명
 - **User**: 크리에이터(CREATOR) / 수강생(STUDENT) 역할 구분
 - **Lecture**: 강의 정보 및 상태(DRAFT/OPEN/CLOSED) 관리, 크리에이터 참조
 - **Enrollment**: 수강 신청 정보 및 상태(PENDING/CONFIRMED/CANCELLED) 관리, User와 Lecture 참조
-## 테스트 실행 방법
 ## 테스트 실행 방법
 ```bash
 # Docker Compose로 MySQL 먼저 실행 후
