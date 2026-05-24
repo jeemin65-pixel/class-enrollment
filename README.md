@@ -59,7 +59,6 @@ docker-compose up -d
 ## API 목록 및 예시
 <img width="965" height="649" alt="API 명세서" src="https://github.com/user-attachments/assets/8cff08ae-9f42-4724-88fc-6dbc85924a83" />
 ### 강의 목록 조회 예시
-<img width="786" height="206" alt="API 명세서 Request DTO" src="https://github.com/user-attachments/assets/67f4b7d7-c374-43c0-872e-b0f93f91e232" />
 <img width="765" height="718" alt="API 명세서 Response DTO" src="https://github.com/user-attachments/assets/c0ac2b92-8897-4232-9690-59bc9a8e62c0" />
 
 ## 데이터 모델 설명
