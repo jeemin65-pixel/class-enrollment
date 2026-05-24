@@ -72,6 +72,7 @@ docker-compose up -d
 <img width="786" height="206" alt="API 명세서 Request DTO" src="https://github.com/user-attachments/assets/5e984f0e-c14a-4243-95f1-8c7425f1f338" />
 <img width="765" height="718" alt="API 명세서 Response DTO" src="https://github.com/user-attachments/assets/9ca23460-11fa-496c-885e-2562767d19c2" />
 
+
 ---
 ## 데이터 모델 설명
 <img width="1016" height="547" alt="ERD" src="https://github.com/user-attachments/assets/01293f1c-686a-4384-b115-447ec0c72c2a" />
